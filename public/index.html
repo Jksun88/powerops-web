@@ -3,655 +3,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PowerOps Tech — DevOps &amp; Cloud Souverain</title>
-<meta name="description" content="Ingénieur DevOps &amp; Cloud freelance. Migration cloud souverain (SecNumCloud), Kubernetes, Terraform, MLOps. Île-de-France, hybride.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #0A0F1C;
-    --panel: #10192C;
-    --panel-2: #0D1524;
-    --line: #223050;
-    --text: #E7ECF5;
-    --muted: #8FA0BD;
-    --accent: #E8A33D;
-    --accent-soft: rgba(232,163,61,0.14);
-    --accent-2: #4E9F6E;
-    --accent-2-soft: rgba(78,159,110,0.14);
-    --radius: 3px;
-    --maxw: 1160px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  .mono{ font-family:'IBM Plex Mono', monospace; }
-  a{ color:inherit; }
-  img,svg{ display:block; max-width:100%; }
-  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:18px; height:1px;
-    background:var(--accent);
-    display:inline-block;
-  }
-  section{ padding:96px 0; border-bottom:1px solid var(--line); }
-  section:last-of-type{ border-bottom:none; }
+<title>PowerOps Tech — Cloud souverain, DevOps &amp; IA</title>
+<meta name="description" content="Cabinet de conseil et d'ingénierie : migration vers le cloud souverain SecNumCloud, Kubernetes managé, Platform Engineering, IA &amp; MLOps, conformité NIS2 et DORA.">
+<link rel="canonical" href="https://poweropstech.com/">
+<meta name="theme-color" content="#0003E6">
 
-  /* reveal on scroll */
-  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-    html{ scroll-behavior:auto; }
-  }
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="PowerOps Tech">
+<meta property="og:title" content="PowerOps Tech — Rendre la souveraineté numérique opérationnelle">
+<meta property="og:description" content="Nous concevons, migrons et exploitons vos plateformes sur cloud de confiance SecNumCloud, du socle Kubernetes jusqu'à l'IA en production.">
+<meta property="og:url" content="https://poweropstech.com/">
+<meta property="og:image" content="https://poweropstech.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 
-  /* NAV */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,15,28,0.86);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:76px;
-  }
-  .logo{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700;
-    font-size:19px;
-    letter-spacing:-0.01em;
-    display:flex; align-items:center; gap:9px;
-  }
-  .logo .dot{
-    width:8px; height:8px; border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 10px 2px var(--accent-soft);
-  }
-  .navlinks{ display:flex; gap:34px; align-items:center; }
-  .navlinks a{
-    font-size:14.5px; color:var(--muted); text-decoration:none;
-    transition:color .2s ease;
-  }
-  .navlinks a:hover{ color:var(--text); }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px;
-    border-radius:var(--radius);
-    font-size:14.5px; font-weight:500;
-    text-decoration:none;
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:all .2s ease;
-  }
-  .btn-primary{
-    background:var(--accent); color:#1A1204;
-  }
-  .btn-primary:hover{ background:#f0b354; }
-  .btn-ghost{
-    border-color:var(--line); color:var(--text);
-    background:transparent;
-  }
-  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
-  .navlinks .btn{ padding:9px 16px; }
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css">
 
-  .mobile-toggle{ display:none; background:none; border:none; color:var(--text); cursor:pointer; }
-
-  /* HERO */
-  .hero{
-    padding:88px 0 40px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
-    align-items:center;
-  }
-  .hero h1{
-    font-size:clamp(34px, 4.4vw, 54px);
-    line-height:1.08;
-    margin:18px 0 22px;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--accent);
-  }
-  .hero p.lead{
-    font-size:17.5px;
-    color:var(--muted);
-    max-width:520px;
-    margin-bottom:32px;
-  }
-  .hero-ctas{ display:flex; gap:14px; margin-bottom:38px; flex-wrap:wrap; }
-  .badges{ display:flex; gap:10px; flex-wrap:wrap; }
-  .badge{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:.03em;
-    color:var(--muted);
-    border:1px solid var(--line);
-    padding:6px 11px;
-    border-radius:var(--radius);
-  }
-
-  /* STACK DIAGRAM (signature element) */
-  .stack-wrap{ position:relative; }
-  .stack-caption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--muted);
-    text-align:center;
-    margin-top:14px;
-    letter-spacing:.04em;
-  }
-  .layer{ cursor:pointer; }
-  .layer rect.band{
-    fill:var(--panel);
-    stroke:var(--line);
-    stroke-width:1;
-    transition:fill .25s ease, stroke .25s ease;
-  }
-  .layer:hover rect.band{
-    fill:var(--accent-soft);
-    stroke:var(--accent);
-  }
-  .layer text.layer-label{
-    fill:var(--text);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-  }
-  .layer text.layer-sub{
-    fill:var(--muted);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:11px;
-  }
-  .layer:hover text.layer-sub{ fill:#c9d6ea; }
-  .node{ fill:var(--muted); transition:fill .25s ease, r .25s ease; }
-  .layer:hover .node{ fill:var(--accent); }
-  .connector{ stroke:var(--line); stroke-width:1; }
-  .layer:hover .connector{ stroke:var(--accent); }
-
-  /* SERVICES */
-  .section-head{ max-width:640px; margin-bottom:52px; }
-  .section-head h2{ font-size:clamp(26px,3vw,36px); margin-top:14px; }
-  .section-head p{ color:var(--muted); margin-top:14px; font-size:16px; }
-
-  .cards{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .card{
-    background:var(--bg);
-    padding:32px 28px;
-    transition:background .25s ease;
-  }
-  .card:hover{ background:var(--panel-2); }
-  .card .idx{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--accent);
-    letter-spacing:.06em;
-  }
-  .card h3{
-    font-size:19px;
-    margin:14px 0 10px;
-  }
-  .card p{
-    color:var(--muted);
-    font-size:14.5px;
-    margin:0;
-  }
-
-  /* EXPERTISE */
-  .expertise-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:64px;
-  }
-  .cert-list{ display:flex; flex-direction:column; gap:0; }
-  .cert-row{
-    display:flex; justify-content:space-between; align-items:baseline;
-    padding:18px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .cert-row:first-child{ border-top:1px solid var(--line); }
-  .cert-name{ font-family:'Space Grotesk', sans-serif; font-size:16px; font-weight:500; }
-  .cert-tag{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent-2); }
-  .sectors{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-  .sector-pill{
-    font-size:13px; color:var(--muted);
-    border:1px solid var(--line);
-    padding:7px 13px; border-radius:20px;
-  }
-  .expertise-note p{ color:var(--muted); font-size:15.5px; }
-  .expertise-note h3{ font-size:18px; margin-bottom:12px; }
-
-  /* METHODE (real sequence -> numbering justified) */
-  .method{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-    position:relative;
-  }
-  .method::before{
-    content:"";
-    position:absolute; top:22px; left:0; right:0; height:1px;
-    background:var(--line);
-  }
-  .step{ position:relative; padding-right:24px; }
-  .step-num{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--bg);
-    background:var(--accent);
-    width:44px; height:44px;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    position:relative; z-index:2;
-    margin-bottom:22px;
-  }
-  .step h3{ font-size:16.5px; margin-bottom:9px; }
-  .step p{ color:var(--muted); font-size:14px; margin:0; }
-
-  /* CONTACT */
-  .contact-grid{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:64px;
-  }
-  .contact-info h2{ font-size:clamp(26px,3vw,34px); margin-bottom:18px; }
-  .contact-info p{ color:var(--muted); font-size:16px; margin-bottom:32px; max-width:440px; }
-  .info-row{
-    display:flex; align-items:center; gap:12px;
-    padding:14px 0;
-    border-top:1px solid var(--line);
-    font-size:14.5px;
-  }
-  .info-row:last-child{ border-bottom:1px solid var(--line); }
-  .info-label{ color:var(--muted); width:110px; flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.04em; text-transform:uppercase; }
-  .info-value a{ text-decoration:none; color:var(--text); }
-  .info-value a:hover{ color:var(--accent); }
-
-  form{ display:flex; flex-direction:column; gap:18px; }
-  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--muted);
-    display:block; margin-bottom:8px;
-  }
-  input, textarea, select{
-    width:100%;
-    background:var(--panel);
-    border:1px solid var(--line);
-    color:var(--text);
-    padding:12px 14px;
-    border-radius:var(--radius);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:14.5px;
-    transition:border-color .2s ease;
-  }
-  input:focus, textarea:focus, select:focus{
-    outline:none; border-color:var(--accent);
-  }
-  textarea{ resize:vertical; min-height:120px; }
-  .form-foot{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  .form-hint{ font-size:12.5px; color:var(--muted); }
-
-  footer{ padding:40px 0; }
-  .footer-row{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-  }
-  .footer-row p{ color:var(--muted); font-size:13px; margin:0; }
-  .footer-links{ display:flex; gap:22px; }
-  .footer-links a{ color:var(--muted); font-size:13px; text-decoration:none; }
-  .footer-links a:hover{ color:var(--accent); }
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-    outline:2px solid var(--accent); outline-offset:2px;
-  }
-
-  @media (max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .cards{ grid-template-columns:1fr; }
-    .expertise-grid{ grid-template-columns:1fr; gap:40px; }
-    .method{ grid-template-columns:1fr 1fr; row-gap:36px; }
-    .method::before{ display:none; }
-    .contact-grid{ grid-template-columns:1fr; gap:40px; }
-    .form-row{ grid-template-columns:1fr; }
-    .navlinks{
-      position:absolute; top:76px; left:0; right:0;
-      background:var(--bg); border-bottom:1px solid var(--line);
-      flex-direction:column; align-items:flex-start; padding:20px 28px; gap:18px;
-      display:none;
-    }
-    .navlinks.open{ display:flex; }
-    .mobile-toggle{ display:block; }
-  }
-  @media (max-width:560px){
-    .method{ grid-template-columns:1fr; }
-    section{ padding:64px 0; }
-  }
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "PowerOps Tech",
+  "url": "https://poweropstech.com/",
+  "logo": "https://poweropstech.com/assets/img/icon-512.png",
+  "image": "https://poweropstech.com/assets/img/og-image.png",
+  "email": "contact@poweropstech.com",
+  "description": "Cabinet de conseil et d'ingénierie en cloud souverain, DevOps et IA.",
+  "areaServed": "FR",
+  "address": { "@type": "PostalAddress", "addressRegion": "Essonne", "addressCountry": "FR" },
+  "founder": { "@type": "Person", "name": "Joseph Kouamen Tankoua" },
+  "knowsAbout": ["SecNumCloud", "Kubernetes", "Terraform", "MLOps", "NIS2", "DORA"]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Aller au contenu</a>
 
-<header>
-  <nav class="wrap">
-    <div class="logo"><span class="dot"></span>PowerOps<span class="mono" style="color:var(--muted); font-weight:400;">Tech</span></div>
-    <div class="navlinks" id="navlinks">
-      <a href="#services">Services</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#methode">Méthode</a>
-      <a href="#contact" class="btn btn-primary">Discuter d'un projet</a>
-    </div>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Navigation principale">
+    <a class="brand" href="/" aria-label="PowerOps Tech — accueil">
+      <img class="brand-mark" src="/assets/img/powerops-mark.png" alt="" width="235" height="400">
+      <img class="brand-word" src="/assets/img/powerops-wordmark.png" alt="" width="900" height="135">
+      <span class="brand-tag">TECH</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#offres">Offres</a>
+      <a href="#secteurs">Secteurs</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#references">Références</a>
+      <a href="#cabinet">Le cabinet</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Demander un audit</a>
+    </div>
   </nav>
 </header>
 
+<main id="main">
+
+<!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">DevOps &amp; Cloud souverain — Île-de-France</div>
-      <h1>Vos infrastructures cloud,<br>industrialisées et <em>souveraines</em>.</h1>
-      <p class="lead">Ingénieur DevOps &amp; Cloud freelance, spécialisé en migration vers le cloud souverain (SecNumCloud), Kubernetes et Terraform. J'aide les DSI et éditeurs à reprendre le contrôle de leur infrastructure — sans sacrifier la vélocité.</p>
+    <div class="hero-copy">
+      <p class="pill"><span class="tag">NIS2</span>Conformité attendue fin 2027 — êtes-vous prêts ?</p>
+      <h1>Rendre la souveraineté numérique <em>opérationnelle</em>.</h1>
+      <p class="lead">Cabinet de conseil et d'ingénierie : nous concevons, migrons et exploitons vos plateformes sur cloud de confiance SecNumCloud — du socle Kubernetes jusqu'à l'IA en production.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Discuter de votre projet</a>
-        <a href="#services" class="btn btn-ghost">Voir les services</a>
+        <a href="#contact" class="btn btn-primary">Demander un audit de souveraineté <span aria-hidden="true">→</span></a>
+        <a href="#offres" class="btn btn-secondary">Découvrir nos offres</a>
       </div>
-      <div class="badges">
-        <span class="badge">CKA — Certified Kubernetes Administrator</span>
-        <span class="badge">Terraform Associate</span>
-        <span class="badge">6 ans d'expérience</span>
-        <span class="badge">Hybride — remote + sur site</span>
-      </div>
+      <ul class="checks">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Certifiés CKA &amp; Terraform</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Expérience S3NS en production</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Réponse sous 48 h</li>
+      </ul>
     </div>
 
-    <div class="stack-wrap reveal">
-      <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma de la pile technique PowerOps Tech">
-        <!-- connectors -->
-        <line class="connector" x1="40" y1="360" x2="40" y2="40"/>
-        <!-- Layer 1: bottom - Infra cloud -->
-        <g class="layer">
-          <rect class="band" x="20" y="320" width="420" height="64" rx="3"/>
-          <circle class="node" cx="40" cy="352" r="4"/>
-          <text class="layer-label" x="58" y="345">01 · INFRASTRUCTURE CLOUD</text>
-          <text class="layer-sub" x="58" y="364">GCP · SecNumCloud (S3NS, Bleu, NumSpot)</text>
-        </g>
-        <!-- Layer 2: Orchestration -->
-        <g class="layer">
-          <rect class="band" x="20" y="248" width="420" height="64" rx="3"/>
-          <circle class="node" cx="40" cy="280" r="4"/>
-          <text class="layer-label" x="58" y="273">02 · ORCHESTRATION</text>
-          <text class="layer-sub" x="58" y="292">Kubernetes · GitOps (ArgoCD)</text>
-        </g>
-        <!-- Layer 3: IaC -->
-        <g class="layer">
-          <rect class="band" x="20" y="176" width="420" height="64" rx="3"/>
-          <circle class="node" cx="40" cy="208" r="4"/>
-          <text class="layer-label" x="58" y="201">03 · INFRASTRUCTURE AS CODE</text>
-          <text class="layer-sub" x="58" y="220">Terraform · Modules industrialisés</text>
-        </g>
-        <!-- Layer 4: Sécurité / conformité -->
-        <g class="layer">
-          <rect class="band" x="20" y="104" width="420" height="64" rx="3"/>
-          <circle class="node" cx="40" cy="136" r="4"/>
-          <text class="layer-label" x="58" y="129">04 · SÉCURITÉ &amp; CONFORMITÉ</text>
-          <text class="layer-sub" x="58" y="148">RGPD · NIS2 · Vault · Keycloak</text>
-        </g>
-        <!-- Layer 5: Ops / MLOps top -->
-        <g class="layer">
-          <rect class="band" x="20" y="32" width="420" height="64" rx="3"/>
-          <circle class="node" cx="40" cy="64" r="4"/>
-          <text class="layer-label" x="58" y="57">05 · EXPLOITATION &amp; MLOPS</text>
-          <text class="layer-sub" x="58" y="76">Monitoring · MCO · Infra IA / GPU souverain</text>
-        </g>
-      </svg>
-      <div class="stack-caption">La pile PowerOps — de l'infrastructure au maintien en condition opérationnelle</div>
+    <div class="hero-visual">
+      <img class="hero-watermark" src="/assets/img/powerops-mark.png" alt="" width="235" height="400">
+      <figure class="console" aria-label="Illustration : déroulé type d'une migration vers SecNumCloud" role="img">
+        <div class="console-bar"><span>migration / app-metier-prod</span><span class="target">→ SecNumCloud</span></div>
+        <ol class="console-steps">
+          <li>
+            <span class="dot dot-done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+            <div class="step-body"><div class="step-row"><span>Audit de souveraineté</span><span class="status">rapport livré</span></div></div>
+          </li>
+          <li>
+            <span class="dot dot-done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+            <div class="step-body"><div class="step-row"><span>POC sur plateforme cible</span><span class="status">Go validé</span></div></div>
+          </li>
+          <li>
+            <span class="dot dot-active"></span>
+            <div class="step-body">
+              <div class="step-row"><span>Migration &amp; industrialisation</span><span class="status active">en cours</span></div>
+              <div class="progress"><span></span></div>
+              <div class="chips"><span class="chip">terraform apply</span><span class="chip">argocd sync</span><span class="chip">dossier NIS2</span></div>
+            </div>
+          </li>
+          <li class="todo">
+            <span class="dot dot-todo"></span>
+            <div class="step-body"><div class="step-row"><span>MCO 24/7</span><span class="status">à venir</span></div></div>
+          </li>
+        </ol>
+      </figure>
     </div>
   </div>
 </section>
 
-<section id="services">
+<!-- PLATEFORMES — ne garder que celles réellement pratiquées -->
+<section class="platforms" aria-label="Plateformes">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Services</div>
-      <h2>Ce que je fais concrètement</h2>
-      <p>Chaque mission part d'un besoin métier précis — pas d'un catalogue de technologies. Voici les briques que j'assemble selon votre contexte.</p>
-    </div>
-    <div class="cards">
-      <div class="card reveal">
-        <div class="idx">01</div>
-        <h3>Migration cloud souverain</h3>
-        <p>Cartographie de l'existant, plan de trajectoire et exécution vers des plateformes SecNumCloud (S3NS, Bleu, NumSpot...), en cohérence avec vos contraintes réglementaires.</p>
-      </div>
-      <div class="card reveal">
-        <div class="idx">02</div>
-        <h3>Kubernetes &amp; orchestration</h3>
-        <p>Conception et exploitation de clusters K8s (on-premise, GKE ou souverain), déploiements GitOps avec ArgoCD, standardisation multi-environnements.</p>
-      </div>
-      <div class="card reveal">
-        <div class="idx">03</div>
-        <h3>Infrastructure as Code</h3>
-        <p>Modules Terraform réutilisables, pipelines d'industrialisation, gestion des environnements pour réduire la dette d'infrastructure.</p>
-      </div>
-      <div class="card reveal">
-        <div class="idx">04</div>
-        <h3>Infra IA &amp; MLOps</h3>
-        <p>Cloud GPU souverain, hébergement de modèles, mise en place de pipelines MLOps pour industrialiser vos usages IA en environnement contraint.</p>
-      </div>
-      <div class="card reveal">
-        <div class="idx">05</div>
-        <h3>Sécurité &amp; conformité</h3>
-        <p>Mise en œuvre des exigences SecNumCloud, RGPD, NIS2 ; gestion des secrets (Vault) et des identités (Keycloak) dans vos chaînes de déploiement.</p>
-      </div>
-      <div class="card reveal">
-        <div class="idx">06</div>
-        <h3>Maintien en condition opérationnelle</h3>
-        <p>Monitoring, astreinte, amélioration continue de la fiabilité et des coûts — pour des infrastructures qui tiennent dans la durée.</p>
-      </div>
-    </div>
+    <p>Nous intervenons sur les plateformes de confiance</p>
+    <ul><li>S3NS</li><li>OVHcloud</li><li>Scaleway</li><li>NumSpot</li><li>Outscale</li></ul>
   </div>
 </section>
 
-<section id="expertise">
+<!-- OFFRES -->
+<section id="offres">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Expertise</div>
-      <h2>Certifications &amp; terrain</h2>
+    <div class="section-head">
+      <span class="eyebrow">Nos offres</span>
+      <h2>Des résultats livrés, pas des jours-hommes.</h2>
+      <p class="lead">Cinq lignes d'offres, chacune avec un périmètre clair, des livrables et un prix de départ.</p>
     </div>
-    <div class="expertise-grid">
-      <div class="reveal">
-        <div class="cert-list">
-          <div class="cert-row">
-            <span class="cert-name">Certified Kubernetes Administrator (CKA)</span>
-            <span class="cert-tag">VALIDÉE</span>
-          </div>
-          <div class="cert-row">
-            <span class="cert-name">HashiCorp Terraform Associate</span>
-            <span class="cert-tag">VALIDÉE</span>
-          </div>
+    <div class="grid grid-3">
+      <article class="card">
+        <div class="card-top">
+          <span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 01-.5-8 5.5 5.5 0 0110.6-1.5A4 4 0 0117 18"/><path d="M12 12v8M9 15l3-3 3 3"/></svg></span>
+          <span class="badge badge-orange">CŒUR DE MÉTIER</span>
         </div>
-        <div class="expertise-note" style="margin-top:36px;">
-          <h3>Secteurs d'intervention</h3>
-          <div class="sectors">
-            <span class="sector-pill">Secteur bancaire</span>
-            <span class="sector-pill">Défense &amp; sécurité</span>
-            <span class="sector-pill">Énergie</span>
-            <span class="sector-pill">Secteur public</span>
-            <span class="sector-pill">Éditeurs de logiciels</span>
-          </div>
+        <h3>Migration souveraine</h3>
+        <p>Audit, POC avec Go/No-Go documenté, puis migration complète vers S3NS, OVHcloud, Scaleway ou NumSpot.</p>
+        <div class="card-foot"><span>Audit en 5 à 10 jours</span><strong>dès 7 000 € HT</strong></div>
+      </article>
+      <article class="card">
+        <div class="card-top">
+          <span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span>
+          <span class="badge badge-grey">ABONNEMENT</span>
         </div>
-      </div>
-      <div class="expertise-note reveal">
-        <h3>6 ans sur le terrain, pas en formation</h3>
-        <p>Missions menées chez des grands comptes et des éditeurs sur des enjeux de migration cloud souverain, d'industrialisation Kubernetes/Terraform et de maintien en condition opérationnelle. Chaque mission a nourri des méthodes réutilisables plutôt que des solutions à usage unique.</p>
-        <p>Basé en Île-de-France, disponible en format hybride : à distance en continu, sur site selon le rythme du projet.</p>
-      </div>
+        <h3>Kubernetes managé</h3>
+        <p>Clusters durcis, GitOps et observabilité intégrée, puis maintien en condition opérationnelle N1 à N3.</p>
+        <div class="card-foot"><span>Mensuel</span><strong>dès 3 500 € HT/mois</strong></div>
+      </article>
+      <article class="card">
+        <div class="card-top">
+          <span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+        </div>
+        <h3>Platform Engineering</h3>
+        <p>Pipelines CI/CD sécurisés, terraformisation de l'existant, observabilité avec SLO/SLI définis.</p>
+        <div class="card-foot"><span>Forfait ou régie</span><strong>dès 15 000 € HT</strong></div>
+      </article>
+      <article class="card">
+        <div class="card-top">
+          <span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span>
+          <span class="badge badge-blue">NOUVEAU</span>
+        </div>
+        <h3>IA souveraine &amp; MLOps</h3>
+        <p>Infrastructure GPU sur cloud de confiance et plateformes MLOps prêtes pour l'AI Act.</p>
+        <div class="card-foot"><span>Cadrage puis mise en œuvre</span><strong>sur devis</strong></div>
+      </article>
+      <article class="card">
+        <div class="card-top">
+          <span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+        </div>
+        <h3>Conformité &amp; formation</h3>
+        <p>Mise en conformité NIS2 avec documentation ANSSI, stratégie de plateforme, formation de vos équipes.</p>
+        <div class="card-foot"><span>Formation 1 à 3 jours</span><strong>dès 2 500 € HT/jour</strong></div>
+      </article>
+      <article class="card card-cta">
+        <img class="card-cta-mark" src="/assets/img/powerops-mark.png" alt="" width="235" height="400">
+        <h3>Par où commencer ?</h3>
+        <p>L'audit de souveraineté vous donne une cartographie des risques et une feuille de route priorisée en deux semaines.</p>
+        <a href="#contact" class="btn btn-accent">Démarrer par un audit →</a>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="methode">
+<!-- POURQUOI MAINTENANT -->
+<section class="night" aria-labelledby="why-title">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Méthode</div>
-      <h2>Comment se déroule une mission</h2>
-      <p>Quatre étapes, dans cet ordre — chacune conditionne la suivante.</p>
+    <div class="section-head">
+      <span class="eyebrow">Pourquoi maintenant</span>
+      <h2 id="why-title">La réglementation a fixé le calendrier. Les compétences, elles, manquent.</h2>
     </div>
-    <div class="method">
-      <div class="step reveal">
-        <div class="step-num">1</div>
+    <div class="grid grid-4">
+      <div class="stat"><strong>15 000</strong><p>entités françaises concernées par NIS2, contre 300 sous NIS1.</p></div>
+      <div class="stat"><strong>847</strong><p>projets publics lancés en 2025 sous la doctrine Cloud au Centre.</p></div>
+      <div class="stat"><strong>DORA</strong><p>en vigueur depuis janvier 2025 pour la banque et l'assurance.</p></div>
+      <div class="stat"><strong>AI Act</strong><p>déploiement 2026–2027 : l'IA en production doit être gouvernée.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS -->
+<section id="secteurs" class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vous êtes…</span>
+      <h2>Chaque secteur a sa contrainte. Nous parlons la vôtre.</h2>
+    </div>
+    <div class="grid grid-4">
+      <a class="sector" href="#contact">
+        <span class="who">DSI · SECTEUR PUBLIC</span>
+        <h3>Collectivités &amp; administrations</h3>
+        <p>Une trajectoire Cloud au Centre priorisée et une documentation ANSSI clé en main.</p>
+        <span class="more">Parlons de votre projet →</span>
+      </a>
+      <a class="sector" href="#contact">
+        <span class="who">RSSI · FINANCE</span>
+        <h3>Banques &amp; assurances</h3>
+        <p>Chaque migration livrée avec un dossier DORA / NIS2 prêt pour votre auditeur.</p>
+        <span class="more">Parlons de votre projet →</span>
+      </a>
+      <a class="sector" href="#contact">
+        <span class="who">CTO · ÉDITEUR SAAS</span>
+        <h3>Éditeurs de logiciels</h3>
+        <p>Ne perdez plus de deal sur « Êtes-vous SecNumCloud ? ». POC démarrable en deux semaines.</p>
+        <span class="more">Parlons de votre projet →</span>
+      </a>
+      <a class="sector" href="#contact">
+        <span class="who">DIRECTION DE PROGRAMME</span>
+        <h3>Défense, spatial &amp; industrie</h3>
+        <p>Données sensibles, délais contractuels : une intégration discrète dans votre équipe projet.</p>
+        <span class="more">Parlons de votre projet →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section class="bordered" aria-labelledby="method-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Méthode</span>
+      <h2 id="method-title">Quatre étapes. Un livrable à chacune.</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="step-head"><span class="step-num">1</span><span class="step-line"></span></div>
         <h3>Audit</h3>
-        <p>État des lieux de l'infrastructure existante, des contraintes réglementaires et des risques techniques.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">2</div>
-        <h3>Cadrage &amp; trajectoire</h3>
-        <p>Définition de la cible, du plan de migration et des jalons — validés avec vos équipes.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">3</div>
-        <h3>Migration &amp; industrialisation</h3>
-        <p>Exécution du plan : Terraform, Kubernetes, GitOps, sécurisation — livré par incréments testables.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">4</div>
-        <h3>MCO &amp; amélioration continue</h3>
-        <p>Monitoring, astreinte et optimisation continue une fois l'infrastructure en production.</p>
+        <p>Existant, risques CLOUD Act / NIS2, écarts SecNumCloud.</p>
+        <span class="deliverable">→ rapport + matrice de risques</span>
+      </li>
+      <li>
+        <div class="step-head"><span class="step-num">2</span><span class="step-line"></span></div>
+        <h3>POC</h3>
+        <p>Environnement pilote sur la plateforme cible, cas critiques testés.</p>
+        <span class="deliverable">→ Go / No-Go documenté</span>
+      </li>
+      <li>
+        <div class="step-head"><span class="step-num">3</span><span class="step-line"></span></div>
+        <h3>Migration</h3>
+        <p>Terraform, Kubernetes, GitOps, livrés par incréments testables.</p>
+        <span class="deliverable">→ production + dossier de conformité</span>
+      </li>
+      <li>
+        <div class="step-head"><span class="step-num last">4</span><span class="step-line"></span></div>
+        <h3>MCO</h3>
+        <p>Run N1–N3, astreinte, optimisation des coûts et de la fiabilité.</p>
+        <span class="deliverable">→ SLA + reporting mensuel</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs" class="bg-surface bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Des forfaits clairs, des livrables définis.</h2>
+      <p class="lead">Vous savez ce que vous achetez avant de commencer. Prix indicatifs HT, ajustés au périmètre après un premier échange gratuit.</p>
+    </div>
+    <div class="grid grid-3 plans">
+      <article class="plan">
+        <div class="plan-head">
+          <span class="plan-code">PO-POC</span>
+          <h3>POC de migration</h3>
+          <p>Valider la plateforme cible avant de s'engager.</p>
+        </div>
+        <p class="price">à partir de <strong>18 000 € <small>HT</small></strong>forfait · 15 à 30 jours</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Environnement pilote sur S3NS, OVHcloud, Scaleway ou NumSpot</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Validation des cas d'usage critiques</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Décision Go / No-Go documentée</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" data-need="Migration souveraine">Demander un devis</a>
+      </article>
+      <article class="plan featured">
+        <span class="plan-flag">POINT DE DÉPART RECOMMANDÉ</span>
+        <div class="plan-head">
+          <span class="plan-code">PO-AUDIT</span>
+          <h3>Audit de souveraineté</h3>
+          <p>Savoir où vous en êtes et par quoi commencer.</p>
+        </div>
+        <p class="price">à partir de <strong>7 000 € <small>HT</small></strong>forfait · 5 à 10 jours</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Cartographie complète de l'existant</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Analyse des risques CLOUD Act / NIS2</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Écarts avec le référentiel SecNumCloud</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Rapport, matrice de risques et feuille de route priorisée</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" data-need="Audit de souveraineté">Demander un audit</a>
+      </article>
+      <article class="plan">
+        <div class="plan-head">
+          <span class="plan-code">PO-K8S-MCO</span>
+          <h3>Kubernetes managé</h3>
+          <p>Vos clusters exploités et sécurisés, en continu.</p>
+        </div>
+        <p class="price">à partir de <strong>3 500 € <small>HT / mois</small></strong>abonnement · selon volumétrie</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Run N1 / N2 / N3 et gestion des incidents</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Montées de version planifiées</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Sécurité : mTLS, RBAC, network policies</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0003E6" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Reporting mensuel</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" data-need="Kubernetes managé">Demander un devis</a>
+      </article>
+    </div>
+    <div class="price-table">
+      <h3>Les autres prestations</h3>
+      <div class="table-scroll">
+        <table>
+          <tbody>
+            <tr><th scope="row">Migration complète</th><td>3 à 12 mois selon le périmètre</td><td>sur devis</td></tr>
+            <tr><th scope="row">Platform Engineering</th><td>CI/CD, Infrastructure as Code, observabilité</td><td>15 000 – 40 000 € HT</td></tr>
+            <tr><th scope="row">Formation équipes</th><td>Kubernetes, Terraform, CI/CD en contexte SecNumCloud · 1 à 3 jours</td><td>dès 2 500 € HT / jour</td></tr>
+            <tr><th scope="row">Conformité NIS2</th><td>Cartographie, plan de traitement des risques, documentation ANSSI</td><td>sur devis</td></tr>
+            <tr><th scope="row">IA souveraine &amp; MLOps</th><td>Infrastructure GPU, plateforme MLOps</td><td>sur devis</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-info reveal">
-      <div class="eyebrow">Contact</div>
-      <h2 style="margin-top:14px;">Un projet à cadrer ?</h2>
-      <p>Migration cloud souverain, cluster à stabiliser, équipe à former sur Kubernetes ou Terraform — décrivez votre contexte, je reviens vers vous sous 48h.</p>
-      <div class="info-row">
-        <span class="info-label">Email</span>
-        <span class="info-value"><a href="mailto:contact@poweropstech.com">contact@poweropstech.com</a></span>
+<!-- ÉTUDE DE CAS — À COMPLÉTER : contexte et chiffres réels avant mise en ligne -->
+<section id="references" class="bg-surface">
+  <div class="wrap">
+    <article class="case">
+      <div class="case-copy">
+        <span class="eyebrow">Étude de cas · Banque</span>
+        <h2>Kubernetes en production sur S3NS pour un établissement bancaire</h2>
+        <p>[À COMPLÉTER — contexte client anonymisé et actions clés : architecture cible, Terraform, GitOps, mise en place du MCO.]</p>
       </div>
-      <div class="info-row">
-        <span class="info-label">Zone</span>
-        <span class="info-value">Île-de-France — hybride (remote + sur site)</span>
+      <div class="kpis">
+        <div class="kpi"><strong>[X]</strong><span>clusters en production</span></div>
+        <div class="kpi"><strong>[XX,X %]</strong><span>disponibilité</span></div>
+        <div class="kpi"><strong>[−X %]</strong><span>temps de déploiement</span></div>
+        <div class="kpi"><strong>[X mois]</strong><span>sans incident majeur</span></div>
       </div>
-      <div class="info-row">
-        <span class="info-label">LinkedIn</span>
-        <span class="info-value"><a href="#" target="_blank" rel="noopener">linkedin.com/in/joseph-kouamen-tankoua</a></span>
-      </div>
-    </div>
+    </article>
+  </div>
+</section>
 
-    <form id="contactForm" class="reveal">
+<!-- LE CABINET -->
+<section id="cabinet" class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Le cabinet</span>
+      <h2>L'agilité d'un expert, la solidité d'un cabinet.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="pillar"><h3>Spécialistes, pas généralistes</h3><p>Le cloud souverain est notre cœur de métier, pas une ligne de catalogue.</p></div>
+      <div class="pillar"><h3>Continuité garantie</h3><p>Un réseau d'experts associés, sélectionnés sur les mêmes exigences, pour monter en charge.</p></div>
+      <div class="pillar"><h3>Livrables auditables</h3><p>Chaque mission livre sa documentation de conformité, prête pour vos contrôles.</p></div>
+    </div>
+    <div class="founder">
+      <!-- À COMPLÉTER : remplacer par <img class="founder-photo" src="/assets/img/joseph.jpg" alt="Joseph Kouamen Tankoua"> -->
+      <div class="founder-photo" aria-hidden="true"></div>
+      <div class="founder-info">
+        <span class="name">Joseph Kouamen Tankoua</span>
+        <span class="role">Fondateur &amp; Président</span>
+        <p>CKA, Terraform Associate. 6 ans de missions cloud souverain, Kubernetes et MCO en Europe, Afrique et Asie.</p>
+      </div>
+      <ul class="trust">
+        <li>NDA &amp; DPA systématiques</li>
+        <li>RC Pro IT</li>
+        <li>Sans traceur tiers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESSOURCES — articles à venir -->
+<section id="ressources">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Ressources</span>
+      <h2>Ce que nous apprenons sur le terrain.</h2>
+    </div>
+    <div class="grid grid-3">
+      <article class="post">
+        <div class="post-cover cover-orange" aria-hidden="true">NIS2</div>
+        <div class="post-body"><span class="kind highlight">GUIDE GRATUIT · BIENTÔT</span><h3>Checklist NIS2 : 30 points à vérifier avant fin 2027</h3></div>
+      </article>
+      <article class="post">
+        <div class="post-cover cover-blue" aria-hidden="true">S3NS · OVH · Scaleway</div>
+        <div class="post-body"><span class="kind">ARTICLE · BIENTÔT</span><h3>Comment choisir sa plateforme SecNumCloud</h3></div>
+      </article>
+      <article class="post">
+        <div class="post-cover cover-night" aria-hidden="true">$ kubectl get nodes</div>
+        <div class="post-body"><span class="kind">ARTICLE · BIENTÔT</span><h3>GKE souverain : ce qui change vraiment</h3></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <img class="contact-mark" src="/assets/img/powerops-mark.png" alt="" width="235" height="400">
+  <div class="wrap">
+    <div class="contact-copy">
+      <h2>Un projet de migration ? Parlons-en.</h2>
+      <p>Décrivez votre contexte : nous revenons vers vous sous 48 h ouvrées avec une première lecture.</p>
+      <a href="mailto:contact@poweropstech.com?subject=Demande%20d%27%C3%A9change%20%E2%80%94%2030%20min" class="btn btn-white">Proposer un créneau de 30 min</a>
+      <ul class="contact-details">
+        <li><a href="mailto:contact@poweropstech.com">contact@poweropstech.com</a></li>
+        <li>Essonne (91) — interventions France entière</li>
+      </ul>
+    </div>
+    <form class="form" id="contactForm" novalidate>
       <div class="form-row">
-        <div>
-          <label for="name">Nom</label>
-          <input type="text" id="name" name="name" required placeholder="Votre nom">
+        <div class="field"><label for="name">Nom</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Votre nom"></div>
+        <div class="field"><label for="email">Email professionnel</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="vous@organisation.fr"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="company">Organisation</label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Nom de votre structure"></div>
+        <div class="field"><label for="need">Votre besoin</label>
+          <select id="need" name="need">
+            <option>Audit de souveraineté</option>
+            <option>Migration souveraine</option>
+            <option>Kubernetes managé</option>
+            <option>Platform Engineering</option>
+            <option>IA &amp; MLOps</option>
+            <option>Conformité / formation</option>
+          </select>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="vous@entreprise.com">
-        </div>
       </div>
-      <div>
-        <label for="company">Entreprise</label>
-        <input type="text" id="company" name="company" placeholder="Nom de votre structure">
-      </div>
-      <div>
-        <label for="message">Votre projet</label>
-        <textarea id="message" name="message" required placeholder="Décrivez votre besoin : contexte, technologies, échéance..."></textarea>
-      </div>
-      <div class="form-foot">
-        <button type="submit" class="btn btn-primary">Envoyer le message</button>
-        <span class="form-hint">Ouvre votre client mail — aucune donnée n'est stockée.</span>
-      </div>
+      <div class="field"><label for="message">Contexte</label><textarea id="message" name="message" rows="4" required placeholder="Périmètre, contraintes réglementaires, échéance…"></textarea></div>
+      <button type="submit" class="btn btn-accent">Envoyer la demande</button>
+      <p class="form-hint">Le formulaire ouvre votre messagerie : aucune donnée n'est stockée sur ce site.</p>
     </form>
   </div>
 </section>
 
-<footer>
-  <div class="wrap footer-row">
-    <p>© 2026 PowerOps Tech. Tous droits réservés.</p>
-    <div class="footer-links">
-      <a href="mailto:contact@poweropstech.com">contact@poweropstech.com</a>
-      <a href="#" rel="noopener">Mentions légales</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-main">
+    <div class="footer-brand">
+      <span class="brand-line"><img src="/assets/img/powerops-mark.png" alt="" width="235" height="400">PowerOps Tech</span>
+      <span>Cabinet de conseil et d'ingénierie en cloud souverain, DevOps et IA.</span>
+      <!-- À COMPLÉTER : SIREN -->
+      <span class="legal-id">SASU · SIREN [XXX XXX XXX]</span>
+    </div>
+    <div class="footer-cols">
+      <nav class="footer-col" aria-label="Offres"><span class="title">OFFRES</span><a href="#offres">Migration souveraine</a><a href="#offres">Kubernetes managé</a><a href="#offres">Platform Engineering</a><a href="#offres">IA &amp; MLOps</a><a href="#tarifs">Tarifs</a></nav>
+      <nav class="footer-col" aria-label="Cabinet"><span class="title">CABINET</span><a href="#cabinet">À propos</a><a href="#references">Références</a><a href="mailto:contact@poweropstech.com?subject=Rejoindre%20le%20r%C3%A9seau%20PowerOps">Rejoindre le réseau</a><a href="#contact">Contact</a></nav>
+      <nav class="footer-col" aria-label="Légal"><span class="title">LÉGAL</span><a href="/mentions-legales">Mentions légales</a><a href="/mentions-legales#confidentialite">Confidentialité</a></nav>
     </div>
   </div>
+  <div class="footer-bottom"><div class="wrap">© <span id="year">2026</span> PowerOps Tech</div></div>
 </footer>
 
-<script>
-  // mobile nav
-  const toggle = document.getElementById('mobileToggle');
-  const links = document.getElementById('navlinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-
-  // scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-
-  // contact form -> mailto
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const company = document.getElementById('company').value;
-    const message = document.getElementById('message').value;
-    const subject = encodeURIComponent('Nouveau projet — ' + name + (company ? ' (' + company + ')' : ''));
-    const body = encodeURIComponent(
-      'Nom : ' + name + '\n' +
-      'Email : ' + email + '\n' +
-      'Entreprise : ' + (company || '—') + '\n\n' +
-      'Message :\n' + message
-    );
-    window.location.href = 'mailto:contact@poweropstech.com?subject=' + subject + '&body=' + body;
-  });
-</script>
-
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
